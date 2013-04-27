@@ -20,8 +20,8 @@ compile: fetch
 	touch compile
 
 amqp_client: compile
-	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/ebin ebin
-	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/include include
+	cp -Rp $(DISTDIR)/amqp_client-0.0.0/ebin ebin
+	cp -Rp $(DISTDIR)/amqp_client-0.0.0/include include
 
 rabbit_common: compile
 	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/ebin ebin
