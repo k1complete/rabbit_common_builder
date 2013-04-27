@@ -13,17 +13,17 @@ fetch:
 	git clone $(RABBIT_CODEGEN) deps/rabbitmq-codegen
 	git clone $(RABBIT_SERVER) deps/rabbitmq-server
 	git clone $(AMQP_CLIENT) $(BUILDDIR)
-	touch .fetch
+	touch fetch
 
-compile: .fetch
+compile: fetch
 	(cd $(BUILDDIR); make)
-	touch .compile
+	touch compile
 
-amqp_client: .compile
+amqp_client: compile
 	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/ebin ebin
 	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/include include
 
-rabbit_common:
+rabbit_common: compile
 	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/ebin ebin
 	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/include include
 
