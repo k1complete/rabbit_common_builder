@@ -24,13 +24,16 @@ amqp_client: compile
 	+rm -rf include
 	cp -Rp $(DISTDIR)/amqp_client-0.0.0/ebin ebin
 	cp -Rp $(DISTDIR)/amqp_client-0.0.0/include include
-	rm -rf $(BUILDDIR)/
+	rm -rf $(BUILDDIR)/deps
+	rm -rf $(DISTDIR)
 
 rabbit_common: compile
 	+rm -rf ebin
 	+rm -rf include
 	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/ebin ebin
 	cp -Rp $(DISTDIR)/rabbit_common-0.0.0/include include
+	rm -rf $(BUILDDIR)/deps
+	rm -rf $(DISTDIR)
 
 clean:
 	+rm -rf deps
